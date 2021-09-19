@@ -8,6 +8,7 @@ import Turbolinks from "turbolinks";
 import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 import "bootstrap/js/dist/collapse";
+import "bootstrap/dist/css/bootstrap.css";
 
 Rails.start();
 Turbolinks.start();
