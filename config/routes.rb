@@ -3,6 +3,8 @@ Rails
   .routes
   .draw do
     # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-    resources :venues
+    resources :venues do
+      resources :timeslots
+    end
     root 'venues#index'
   end

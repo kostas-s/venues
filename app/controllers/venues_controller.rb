@@ -4,7 +4,7 @@ class VenuesController < ApplicationController
   end
 
   def show
-    @venue = Venue.find(params[:id])
+    @venue = Venue.includes(:timeslots).find(params[:id])
   end
 
   def new

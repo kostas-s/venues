@@ -5,4 +5,6 @@ class Venue < ApplicationRecord
   validates :address, presence: true, length: { maximum: 50 }
   validates :lat, presence: true, length: { maximum: 15 }, numericality: true
   validates :lng, presence: true, length: { maximum: 15 }, numericality: true
+
+  has_many :timeslots, dependent: :destroy
 end

@@ -1,0 +1,2 @@
+<p>Day: <%= timeslot.day %>. Time Range: <%= timeslot.start_time.to_formatted_s(:time) %> - <%= timeslot.end_time.to_formatted_s(:time) %> 
+<%= link_to "Delete", venue_timeslot_path(@venue, timeslot), method: :delete, data: { confirm: "Are you sure you want to delete timeslot?" } %></p>

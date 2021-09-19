@@ -3,3 +3,7 @@
 <p><%= @venue.long_description %></p>
 <p>Address: <%= @venue.address %></p>
 <p>Coordinates: <%= @venue.lat %> <%= @venue.lng %></p>
+<% @venue.timeslots.each do |timeslot| %>
+<%= render 'timeslots/show', timeslot: timeslot %>
+<% end %>
+<%= render 'timeslots/form' %>

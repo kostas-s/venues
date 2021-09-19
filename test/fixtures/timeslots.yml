@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  venue: one
+  start_time: 2021-09-20 00:31:26
+  end_time: 2021-09-20 00:31:26
+  day: 1
+
+two:
+  venue: two
+  start_time: 2021-09-20 00:31:26
+  end_time: 2021-09-20 00:31:26
+  day: 1
