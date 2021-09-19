@@ -1,0 +1,17 @@
+// Place all the styles related to the Venues controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import "bootstrap";
+
+textarea {
+  min-height: 100px !important;
+}
+
+form {
+  li {
+    list-style: none;
+    font-size: 0.9em;
+    color: var(--bs-danger);
+  }
+}

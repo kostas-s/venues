@@ -1,0 +1,10 @@
+require: rubocop-rails
+
+inherit_gem:
+  prettier: rubocop.yml
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false

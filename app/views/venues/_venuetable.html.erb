@@ -1,0 +1,28 @@
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Short Description</th>
+      <th scope="col">Address</th>
+      <th scope="col">Controls</th>
+    </tr>
+  </thead>
+<% venues.each do |venue| %>
+<tr>
+<td>
+  <%= link_to venue.name, venue %>
+</td>
+<td>
+  <%= venue.short_description %>
+</td>
+<td>
+  <%= venue.address %>
+</td>
+<td>
+  <%= link_to 'Edit', edit_venue_path(venue), class: "btn btn-secondary"%>
+  <%= link_to 'Delete', venue_path(venue), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure you want to delete entry?" }%>
+  </td>
+</tr>
+<% end %>
+</table>
