@@ -7,4 +7,16 @@ class Venue < ApplicationRecord
   validates :lng, presence: true, length: { maximum: 15 }, numericality: true
 
   has_many :timeslots, dependent: :destroy
+  has_many_attached :images
+  validate :image_type
+
+  private
+
+  def image_type
+    images.each do |image|
+      if !image.content_type.in?("'image/jpeg image/png'")
+        errors.add(:images, 'only accepts JPEG or PNG files')
+      end
+    end
+  end
 end

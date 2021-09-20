@@ -1,6 +1,7 @@
 <h1 class="display-2"><%= @venue.name %></h1>
 <h6 class="display-6"><%= @venue.short_description %></h6>
 <p><%= @venue.long_description %></p>
+<%= render 'images', images: @venue.images %>
 <p>Address: <%= @venue.address %></p>
 <p>Coordinates: <%= @venue.lat %> <%= @venue.lng %></p>
 <% unless @venue.timeslots.empty? %>
