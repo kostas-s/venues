@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(version: 2021_09_19_213126) do
 
   create_table "timeslots", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "venue_id", null: false
-    t.time "start_time"
-    t.time "end_time"
-    t.integer "day"
+    t.time "start_time", null: false
+    t.time "end_time", null: false
+    t.integer "day", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["venue_id"], name: "index_timeslots_on_venue_id"

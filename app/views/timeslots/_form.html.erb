@@ -1,13 +1,14 @@
-<h5 class="display-5">Create Timeslot</h5>
+
 <%= form_with model: [ @venue, @venue.timeslots.build ] do |f| %>
 <div class="mb-3 row">
   <%= f.label :day, class:"col-sm-2 col-form-label" %>
     <div class="col-sm-4">
-  <%= f.range_field :day, in: 1...7, class:"form-control" %>
+  <%= f.select :day, Timeslot.day_options, {} ,class:"form-control" %>
 </div>
 
 </div>
 <div class="mb-3 row">
+
   <%= f.label :start_time, class:"col-sm-2 col-form-label" %>
   <div class="col-sm-2">
   <%= f.time_field :start_time, class:"form-control" %>
