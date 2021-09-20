@@ -9,6 +9,8 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
+  username: <%= ENV["VENUES_DATABASE_USERNAME"]%>
+  password: <%= ENV["VENUES_DATABASE_PASSWORD"]%>
 
 development:
   <<: *default
