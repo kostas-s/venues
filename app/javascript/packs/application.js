@@ -13,4 +13,3 @@ import "bootstrap/dist/css/bootstrap.css";
 Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
-jquery.start();
