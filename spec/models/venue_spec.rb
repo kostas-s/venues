@@ -104,31 +104,33 @@ RSpec.describe Venue, type: :model do
         expect(invalid_venue).to_not be_valid
       end
 
-      it 'lat should be a 8,6 decimal' do
-        # This way I test for validation in database level, Probably not needed?
-        expect { FactoryBot.create(:venue, lat: '121.121212') }.to raise_error(
-          ActiveRecord::RangeError,
-        )
-        expect { FactoryBot.create(:venue, lat: 'aa.abbbb') }.to raise_error(
-          ActiveRecord::RecordInvalid,
-        )
+      context 'database level' do
+        it 'lat should be a 8,6 decimal' do
+          # This way I test for validation in database level, Probably not needed?
+          expect {
+            FactoryBot.create(:venue, lat: '121.121212')
+          }.to raise_error(ActiveRecord::RangeError)
+          expect { FactoryBot.create(:venue, lat: 'aa.abbbb') }.to raise_error(
+            ActiveRecord::RecordInvalid,
+          )
 
-        expect {
-          FactoryBot.create(:venue, lat: '12.121212')
-        }.to_not raise_error
-      end
+          expect {
+            FactoryBot.create(:venue, lat: '12.121212')
+          }.to_not raise_error
+        end
 
-      it 'lng should be a 9,6 decimal' do
-        # This way I test for validation in database level
-        expect { FactoryBot.create(:venue, lng: '1212.121212') }.to raise_error(
-          ActiveRecord::RangeError,
-        )
-        expect { FactoryBot.create(:venue, lng: 'aa.bbbb') }.to raise_error(
-          ActiveRecord::RecordInvalid,
-        )
-        expect {
-          FactoryBot.create(:venue, lng: '121.121212')
-        }.to_not raise_error
+        it 'lng should be a 9,6 decimal' do
+          # This way I test for validation in database level
+          expect {
+            FactoryBot.create(:venue, lng: '1212.121212')
+          }.to raise_error(ActiveRecord::RangeError)
+          expect { FactoryBot.create(:venue, lng: 'aa.bbbb') }.to raise_error(
+            ActiveRecord::RecordInvalid,
+          )
+          expect {
+            FactoryBot.create(:venue, lng: '121.121212')
+          }.to_not raise_error
+        end
       end
     end
   end

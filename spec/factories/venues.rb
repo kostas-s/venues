@@ -16,7 +16,7 @@ require 'faker'
 
 FactoryBot.define do
   factory :venue do
-    name { Faker::Name.name }
+    name { Faker::Lorem.paragraph_by_chars(number: 25) }
     short_description { Faker::Lorem.paragraph_by_chars(number: 50) }
     long_description { Faker::Lorem.paragraph_by_chars(number: 500) }
     address { Faker::Lorem.paragraph_by_chars(number: 50) }
