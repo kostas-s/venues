@@ -23,6 +23,24 @@
 require 'rails_helper'
 
 RSpec.describe Venue, type: :model do
+  context 'happy path' do
+    it 'should save valid venue successfully' do
+      v = FactoryBot.build(:venue).save
+      expect(v).to eq(true)
+    end
+
+    it 'should be able to retrieve saved venues' do
+      v1 = FactoryBot.create(:venue)
+      v2 = FactoryBot.create(:venue)
+      expect(Venue.all).to include(v1, v2)
+    end
+
+    it 'should return the correct number of venues created' do
+      5.times { FactoryBot.create(:venue) }
+      expect(Venue.all.size).to eq(5)
+    end
+  end
+
   context 'validation tests' do
     describe 'absence of required fields' do
       it 'is not valid without name' do
