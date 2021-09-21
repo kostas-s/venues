@@ -3,12 +3,12 @@
 # Table name: venues
 #
 #  id                :uuid             not null, primary key
-#  name              :string
-#  short_description :text
-#  long_description  :text
-#  address           :text
-#  lat               :decimal(8, 6)
-#  lng               :decimal(9, 6)
+#  name              :string           not null
+#  short_description :text             not null
+#  long_description  :text             not null
+#  address           :text             not null
+#  lat               :decimal(8, 6)    not null
+#  lng               :decimal(9, 6)    not null
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #
