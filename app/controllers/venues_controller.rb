@@ -52,6 +52,7 @@ class VenuesController < ApplicationController
         :address,
         :lng,
         :lat,
+        images: [],
       )
   end
 end

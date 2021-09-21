@@ -39,6 +39,12 @@
   <%= f.label :lng, class: "form-label" %>
   <ul><% venue.errors.full_messages_for(:lng).each do |message| %><li><%= message %></li><% end %></ul>
 </div>
+
+<div class="form-floating mb-3">
+  <%= f.file_field :images, multiple: true, direct_upload: true, class:"form-control" %>
+  <%= f.label :images, class: "form-label" %>
+
+</div>
     
 
   <%= f.submit class:"btn btn-primary" %>
