@@ -20,7 +20,7 @@ class VenuesController < ApplicationController
   def update
     @venue = Venue.find(params[:id])
     if @venue.update(venue_params)
-      redirect_to venue_path(@venue)
+      redirect_to venue_path(@venue), notice: 'Venue was successfully edited'
     else
       render :edit
     end
@@ -36,7 +36,7 @@ class VenuesController < ApplicationController
     @venue = Venue.new(venue_params)
 
     if @venue.save
-      redirect_to root_path
+      redirect_to root_path, notice: 'Venue was successfully created'
     else
       render :new
     end
