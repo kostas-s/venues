@@ -20,7 +20,7 @@ class VenuesController < ApplicationController
   def update
     @venue = Venue.find(params[:id])
     if @venue.update(venue_params)
-      redirect_to venue_path(@venue), notice: 'Venue was successfully edited'
+      redirect_to venue_path(@venue), notice: 'Venue was successfully updated'
     else
       render :edit
     end
@@ -29,7 +29,7 @@ class VenuesController < ApplicationController
   def destroy
     @venue = Venue.find(params[:id])
     @venue.destroy
-    redirect_to root_path
+    redirect_to root_path, notice: 'Venue was successfully deleted'
   end
 
   def create

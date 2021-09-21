@@ -75,3 +75,20 @@ RSpec.configure do |config|
 
   config.around(:each) { |example| DatabaseCleaner.cleaning { example.run } }
 end
+
+# To configure capybara to also check JS
+
+# install geckodriver
+# start service geckodriver
+# Capybara.default_driver = :selenium
+
+# install chromedriver
+# start service chromedriver
+# Capybara.default_driver = :selenium_chrome_headless // or :selenium_chrome
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end
