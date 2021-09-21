@@ -6,7 +6,7 @@ class TimeslotsController < ApplicationController
     if @timeslot.save
       redirect_to @venue, notice: 'Timeslot was successfully created'
     else
-      redirect_to root_path, notice: 'Timeslot could not be created'
+      redirect_to venue_path(@venue), notice: 'Timeslot could not be created'
     end
   end
 
