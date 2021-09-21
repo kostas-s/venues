@@ -4,16 +4,16 @@ class TimeslotsController < ApplicationController
   def create
     @timeslot = @venue.timeslots.build(timeslot_params)
     if @timeslot.save
-      redirect_to @venue
+      redirect_to @venue, notice: 'Timeslot was successfully created'
     else
-      redirect_to root_path
+      redirect_to root_path, notice: 'Timeslot could not be created'
     end
   end
 
   def destroy
     @timeslot = @venue.timeslots.find(params[:id])
     @timeslot.destroy
-    redirect_to @venue
+    redirect_to @venue, notice: 'Timeslot was successfully deleted'
   end
 
   private
