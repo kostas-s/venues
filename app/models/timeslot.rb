@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: timeslots
+#
+#  id         :uuid             not null, primary key
+#  venue_id   :uuid             not null
+#  start_time :time             not null
+#  end_time   :time             not null
+#  day        :integer          default(0)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 class Timeslot < ApplicationRecord
   belongs_to :venue
 
