@@ -1,0 +1,51 @@
+el:
+  activerecord:
+    models:
+      venue: Τοποθεσία
+    attributes:
+      venue:
+        name: Όνομα
+        short_description: Σύντομη Περιγραφή
+        long_description: Αναλυτική Περιγραφή
+        address: Διεύθυνση
+        lat: Γεωγραφικό Μήκος
+        lng: Γεωγραφικό Πλάτος
+      timeslot:
+        start_time: Ώρα Έναρξης
+        end_time: Ώρα Λήξης
+        day: Ημέρα
+    errors:
+      messages:
+        blank: δεν μπορεί να είναι κενό
+        not_a_number: θέλει αριθμητική τιμή
+        too_long: υπερβαίνει το μέγιστο αριθμό χαρακτήρων
+
+  date:
+    day_names:
+      - Δευτέρα
+      - Τρίτη
+      - Τετάρτη
+      - Πέμπτη
+      - Παρασκευή
+      - Σάββατο
+      - Κυριακή
+  venues:
+    attributes:
+      name: Όνομα
+      short_description: Σύντομη Περιγραφή
+      long_description: Αναλυτική Περιγραφή
+      address: Διεύθυνση
+      lat: Γεωγραφικό Μήκος
+      lng: Γεωγραφικό Πλάτο
+  timeslots:
+    attributes:
+      start_time: Ώρα Έναρξης
+      end_time: Ώρα Λήξης
+      day: Ημέρα
+  helpers:
+    select:
+      prompt: Παρακαλώ επιλέξτε
+    submit:
+      create: Δημιουργία %{model}
+      submit: Αποθήκευση %{model}
+      update: Τροποποίηση %{model}

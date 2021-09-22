@@ -1,3 +1,3 @@
-<p><strong>Day:</strong> <%= Timeslot.day_options.keys[timeslot.day].titleize %>.
+<p><strong>Day:</strong> <%= t('date.day_names')[timeslot.day] %>.
 <strong> Time Range:</strong> <%= timeslot.start_time.to_formatted_s(:time) %> - <%= timeslot.end_time.to_formatted_s(:time) %> 
 <%= link_to "Delete", venue_timeslot_path(@venue, timeslot), method: :delete, data: { confirm: "Are you sure you want to delete timeslot?" } %></p>

@@ -1,50 +1,50 @@
 <%= form_with model: venue do |f| %>
 <div class="form-floating mb-3">
   <%= f.text_field :name, class:"form-control", placeholder: "Name", id: "floatingInput" %>
-  <%= f.label :name %>
+  <%= f.label :name, t('venues.attributes.name') %>
   <ul><% venue.errors.full_messages_for(:name).each do |message| %><li><%= message %></li><% end %></ul>
 </div>
   
 
 <div class="form-floating mb-3">
   <%= f.text_area :short_description, class:"form-control", placeholder: "Short Description", id: "floatingInput" %>
-  <%= f.label :short_description %>
+  <%= f.label :short_description,t('venues.attributes.short_description') %>
   <ul><% venue.errors.full_messages_for(:short_description).each do |message| %><li><%= message %></li><% end %></ul>
   </div>
     
 
 <div class="form-floating mb-3">
   <%= f.text_area :long_description, class:"form-control", placeholder: "Long Description", id: "floatingInput"  %>
-  <%= f.label :long_description %>
+  <%= f.label :long_description,t('venues.attributes.long_description') %>
   <ul><% venue.errors.full_messages_for(:long_description).each do |message| %><li><%= message %></li><% end %></ul>
 </div>
     
 
 <div class="form-floating mb-3">
   <%= f.text_field :address, class:"form-control", placeholder: "Address", id: "floatingInput" %>
-  <%= f.label :address %>
+  <%= f.label :address, t('venues.attributes.address') %>
   <ul><% venue.errors.full_messages_for(:address).each do |message| %><li><%= message %></li><% end %></ul>
 </div>
     
 
 <div class="form-floating mb-3">
   <%= f.text_field :lat, class:"form-control", placeholder: "Lat", id: "floatingInput" %>
-  <%= f.label :lat, class: "form-label" %>
+  <%= f.label :lat, t('venues.attributes.lat'), class: "form-label" %>
   <ul><% venue.errors.full_messages_for(:lat).each do |message| %><li><%= message %></li><% end %></ul>
 </div>
     
 
 <div class="form-floating mb-3">
   <%= f.text_field :lng, class:"form-control", placeholder: "Lng", id: "floatingInput" %>
-  <%= f.label :lng, class: "form-label" %>
+  <%= f.label :lng,t('venues.attributes.lng'), class: "form-label" %>
   <ul><% venue.errors.full_messages_for(:lng).each do |message| %><li><%= message %></li><% end %></ul>
 </div>
 
-<div class="form-floating mb-3">
-  <%= f.file_field :images, multiple: true, direct_upload: true, class:"form-control" %>
-  <%= f.label :images, class: "form-label" %>
-
-</div>
+<%#  <div class="form-floating mb-3">
+<%#  <%= f.file_field :images, multiple: true, direct_upload: true, class:"form-control" %>
+<%#  <%= f.label :images, class: "form-label" %>
+<%#
+<%#  </div> %>
     
 
   <%= f.submit class:"btn btn-primary" %>

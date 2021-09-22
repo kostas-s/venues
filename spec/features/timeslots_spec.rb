@@ -9,9 +9,9 @@ RSpec.feature 'Timeslots', type: :feature do
       within('form') do
         fill_in 'timeslot[start_time]', with: '11:00 AM'
         fill_in 'timeslot[end_time]', with: '12:00 PM'
-        select('mon', from: 'timeslot[day]')
+        select(I18n.t('date.day_names')[1], from: 'timeslot[day]')
       end
-      click_button 'Create Timeslot'
+      click_button I18n.t('helpers.submit.create', model: Timeslot)
       expect(page).to have_content('Timeslot was successfully created')
     end
 
@@ -19,9 +19,9 @@ RSpec.feature 'Timeslots', type: :feature do
       visit venue_path(@venue.id)
       within('form') do
         fill_in 'timeslot[start_time]', with: '11:00 AM'
-        select('mon', from: 'timeslot[day]')
+        select(I18n.t('date.day_names')[2], from: 'timeslot[day]')
       end
-      click_button 'Create Timeslot'
+      click_button I18n.t('helpers.submit.create', model: Timeslot)
       expect(page).to have_content('Timeslot could not be created')
     end
   end

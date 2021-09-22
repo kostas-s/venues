@@ -28,6 +28,54 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      venue: Venue
+    attributes:
+      venue:
+        name: Name
+        short_description: Short Description
+        long_description: Long Description
+        address: Address
+        lat: Latitude
+        lng: Longitude
+      timeslot:
+        start_time: Start Time
+        end_time: End Time
+        day: Day
+    errors:
+      messages:
+        blank: can't be blank
+        not_a_number: need to be a number
+        too_long: exceeds character limit
+
+  date:
+    day_names:
+      - Monday
+      - Tuesday
+      - Wednesday
+      - Thursday
+      - Friday
+      - Saturday
+      - Sunday
+  venues:
+    attributes:
+      name: Name
+      short_description: Short Description
+      long_description: Long Description
+      address: Address
+      lat: Latitude
+      lng: Longitude
+  timeslots:
+    attributes:
+      start_time: Start Time
+      end_time: End Time
+      day: Day
+  helpers:
+    select:
+      prompt: Please choose
+    submit:
+      create: Create %{model}
+      submit: Save %{model}
+      update: Edit %{model}

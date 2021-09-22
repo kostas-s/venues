@@ -14,13 +14,19 @@ RSpec.feature 'Venues', type: :feature do
     end
     scenario 'should be successful' do
       within('form') { fill_in 'venue[name]', with: 'john' }
-      click_button 'Create Venue'
+      click_button I18n.t(
+                     'helpers.submit.create',
+                     model: I18n.t('activerecord.models.venue'),
+                   )
       expect(page).to have_content('Venue was successfully created')
     end
 
     scenario 'should fail' do
-      click_button 'Create Venue'
-      expect(page).to have_content('Name can\'t be blank')
+      click_button I18n.t(
+                     'helpers.submit.create',
+                     model: I18n.t('activerecord.models.venue'),
+                   )
+      expect(page).to have_content(I18n.t 'activerecord.errors.messages.blank')
     end
   end
 
@@ -32,14 +38,20 @@ RSpec.feature 'Venues', type: :feature do
 
     scenario 'should be successful' do
       within('form') { fill_in 'venue[name]', with: '15151' }
-      click_button 'Update Venue'
+      click_button I18n.t(
+                     'helpers.submit.update',
+                     model: I18n.t('activerecord.models.venue'),
+                   )
       expect(page).to have_content('Venue was successfully updated')
     end
 
     scenario 'should fail' do
       within('form') { fill_in 'venue[name]', with: '' }
-      click_button 'Update Venue'
-      expect(page).to have_content('Name can\'t be blank')
+      click_button I18n.t(
+                     'helpers.submit.update',
+                     model: I18n.t('activerecord.models.venue'),
+                   )
+      expect(page).to have_content(I18n.t 'activerecord.errors.messages.blank')
     end
   end
 

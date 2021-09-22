@@ -3,7 +3,7 @@
 <div class="mb-3 row">
   <%= f.label :day, class:"col-sm-2 col-form-label" %>
     <div class="col-sm-4">
-  <%= f.select :day, Timeslot.day_options, {} ,class:"form-control" %>
+  <%= f.select :day, options_for_select(t('date.day_names').map.with_index { |k, i| [k, i]}) ,class:"form-control" %>
 </div>
 
 </div>
