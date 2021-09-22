@@ -60,7 +60,7 @@ RSpec.feature 'Venues', type: :feature do
       v = FactoryBot.create(:venue)
       visit venues_path
       expect(page).to have_content(v.name)
-      click_link 'Delete'
+      click_link I18n.t 'generic.delete'
       expect(page).to have_content('Venue was successfully deleted')
       expect(page).to_not have_content(v.name)
     end

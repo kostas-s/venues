@@ -49,3 +49,10 @@ el:
       create: Δημιουργία %{model}
       submit: Αποθήκευση %{model}
       update: Τροποποίηση %{model}
+  generic:
+    cancel: "Ακύρωση"
+    save: "Αποθήκευση"
+    edit: "Τροποποίηση"
+    save_changes: "Αποθήκευση αλλαγών"
+    close: "Κλείσιμο"
+    delete: "Διαγραφή"

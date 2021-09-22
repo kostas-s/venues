@@ -5,10 +5,20 @@
       <span class="navbar-toggler-icon"></span>
     </button>
      <div class="collapse navbar-collapse" id="navbarNav">
-      <div class="navbar-nav">
-    <%= link_to "New Venue", new_venue_path, class:"nav-link" %>
+      <div class="navbar-nav mr-auto">
+      <%= link_to "New Venue", new_venue_path, class:"nav-link" %>
 </div>
 </div>
+
+<div class="mx-3 d-flex language-select">
+    <% if I18n.locale == :el %>
+      <%= link_to('en', { locale: :en },  class: "link-light") %>
+    <% else %>
+      <%= link_to('el', { locale: :el },  class: "link-light")%>
+    <% end %>
+</div>
+
+
 
   </div>
 </nav>

@@ -79,3 +79,13 @@ en:
       create: Create %{model}
       submit: Save %{model}
       update: Edit %{model}
+  generic:
+    missing_fields: Please fill all the necessary fields.
+    edge_case_error: Please contact with our support.
+    invited_error: This mail is already connected with another doctor. Please choose another email.
+    cancel: "Cancel"
+    save: "Save"
+    edit: "edit"
+    save_changes: "Save changes"
+    close: "Close"
+    delete: "Delete"
