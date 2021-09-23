@@ -42,6 +42,3 @@ yarn-debug.log*
 # Ignore application configuration
 /config/application.yml
 coverage
-
-# Ignore IDE stuff
-/.idea
