@@ -1,10 +1,16 @@
-require: rubocop-rails
+require:
+  - rubocop-rails
+  - rubocop-rspec
 
-inherit_gem:
-  prettier: rubocop.yml
+# inherit_gem:
+#   prettier: rubocop.yml
 
 Style/FrozenStringLiteralComment:
   Enabled: false
 
 Style/Documentation:
   Enabled: false
+
+AllCops:
+  Exclude:
+    - "**/*.erb"

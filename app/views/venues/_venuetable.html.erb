@@ -1,4 +1,3 @@
-
 <table class="table table-striped">
   <thead>
     <tr>
@@ -8,21 +7,21 @@
       <th scope="col">Controls</th>
     </tr>
   </thead>
-<% venues.each do |venue| %>
-<tr>
-<td>
-  <%= link_to venue.name, venue %>
-</td>
-<td>
-  <%= venue.short_description %>
-</td>
-<td>
-  <%= venue.address %>
-</td>
-<td>
-  <%= link_to t('generic.edit'),edit_venue_path(venue), class: "btn btn-secondary"%>
-  <%= link_to t('generic.delete'), venue_path(venue), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure you want to delete entry?" }%>
-  </td>
-</tr>
-<% end %>
+  <% venues.each do |venue| %>
+    <tr>
+      <td>
+        <%= link_to venue.name, venue %>
+      </td>
+      <td>
+        <%= venue.short_description %>
+      </td>
+      <td>
+        <%= venue.address %>
+      </td>
+      <td>
+        <%= link_to t('generic.edit'),edit_venue_path(venue), class: "btn btn-secondary"%>
+        <%= link_to t('generic.delete'), venue_path(venue), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure you want to delete entry?" }%>
+      </td>
+    </tr>
+  <% end %>
 </table>

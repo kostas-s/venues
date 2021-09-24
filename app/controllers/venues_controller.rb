@@ -1,5 +1,6 @@
 class VenuesController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+  before_action :authenticate_user!, except: %i[show index]
 
   def index
     @venues = Venue.all.order(:created_at)
@@ -34,7 +35,6 @@ class VenuesController < ApplicationController
 
   def create
     @venue = Venue.new(venue_params)
-
     if @venue.save
       redirect_to root_path, notice: 'Venue was successfully created'
     else
@@ -53,12 +53,12 @@ class VenuesController < ApplicationController
         :long_description,
         :address,
         :lng,
-        :lat,
+        :lat
         # images: [],
       )
   end
 
   def record_not_found
-    render plain: '404 Not Found', status: 404
+    render plain: '404 Not Found', status: :not_found
   end
 end

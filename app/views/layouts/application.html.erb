@@ -12,13 +12,20 @@
 
   <body>
     <%= render 'shared/header' %>
-    <% flash.each do |type, msg| %>
-  <div class="alert alert-dark" role="alert">
-    <p class="mb-0"><%= msg %></p>
-  </div>
-<% end %>
-    <div class="container">
-      <%= yield %>
-    </div>
-  </body>
-</html>
+    <% if notice %>
+      <p class='notice'><%= notice %></p>
+    <% end %>
+
+    <% if alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+    <%# flash.each do |type, msg| %>
+      <!-- <div class="alert alert-dark" role="alert">-->
+      <!-- <p class="mb-0"><%#= msg %></p>-->
+      <!-- </div>-->
+      <%# end %>
+        <div class="container">
+          <%= yield %>
+        </div>
+      </body>
+    </html>

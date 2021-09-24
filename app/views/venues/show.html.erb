@@ -2,12 +2,21 @@
 <h6 class="display-6"><%= @venue.short_description %></h6>
 <p><%= @venue.long_description %></p>
 <%# <%= render 'images', images: @venue.images %>
-<p>Address: <%= @venue.address %></p>
-<p>Coordinates: <%= @venue.lat %> <%= @venue.lng %></p>
+<p>Address:
+  <%= @venue.address %></p>
+<p>Coordinates:
+  <%= @venue.lat %>
+  <%= @venue.lng %></p>
 <% unless @venue.timeslots.empty? %>
-<h5 class="display-5 mt-5">Stored Timeslots</h5>
-<% end %><% @venue.timeslots.each do |timeslot| %>
-<%= render 'timeslots/show', timeslot: timeslot %>
+  <h5 class="display-5 mt-5">Stored Timeslots</h5>
+<% end %>
+
+
+
+<% @venue.timeslots.each do |timeslot| %>
+
+
+  <%= render 'timeslots/show', timeslot: timeslot %>
 <% end %>
 <h5 class="display-5 mt-5">Create Timeslot</h5>
 <%= render 'timeslots/form' %>

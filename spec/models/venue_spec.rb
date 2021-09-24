@@ -107,29 +107,29 @@ RSpec.describe Venue, type: :model do
       context 'database level' do
         it 'lat should be a 8,6 decimal' do
           # This way I test for validation in database level, Probably not needed?
-          expect {
+          expect do
             FactoryBot.create(:venue, lat: '121.121212')
-          }.to raise_error(ActiveRecord::RangeError)
+          end.to raise_error(ActiveRecord::RangeError)
           expect { FactoryBot.create(:venue, lat: 'aa.abbbb') }.to raise_error(
-            ActiveRecord::RecordInvalid,
+            ActiveRecord::RecordInvalid
           )
 
-          expect {
+          expect do
             FactoryBot.create(:venue, lat: '12.121212')
-          }.to_not raise_error
+          end.to_not raise_error
         end
 
         it 'lng should be a 9,6 decimal' do
           # This way I test for validation in database level
-          expect {
+          expect do
             FactoryBot.create(:venue, lng: '1212.121212')
-          }.to raise_error(ActiveRecord::RangeError)
+          end.to raise_error(ActiveRecord::RangeError)
           expect { FactoryBot.create(:venue, lng: 'aa.bbbb') }.to raise_error(
-            ActiveRecord::RecordInvalid,
+            ActiveRecord::RecordInvalid
           )
-          expect {
+          expect do
             FactoryBot.create(:venue, lng: '121.121212')
-          }.to_not raise_error
+          end.to_not raise_error
         end
       end
     end
