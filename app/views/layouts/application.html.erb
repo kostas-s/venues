@@ -13,11 +13,11 @@
   <body>
     <%= render 'shared/header' %>
     <% if notice %>
-      <p class='notice'><%= notice %></p>
+      <p class="alert alert-success" role="alert"><%= notice %></p>
     <% end %>
 
     <% if alert %>
-      <p class="alert"><%= alert %></p>
+      <p class="alert alert-dark" role="alert"><%= alert %></p>
     <% end %>
     <%# flash.each do |type, msg| %>
       <!-- <div class="alert alert-dark" role="alert">-->
