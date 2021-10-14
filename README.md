@@ -1,24 +1,17 @@
-# TEST BRANCH FOR EXPERIMENTAL FEATURES
+# Venues
+CRUD template for Sports Venues and Timeslots. Tested thoroughly with Rspec + Capybara.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Requirements:
+* After cloning repo, make sure to get all dependencies by running:
+```ruby
+  bundle install
+```
+* Setup your local Postgres DB and edit `database.yml` accordingly
 
-Things you may want to cover:
+## Features:
+* Thorough testing on every interface using RSpec.
+* Feature testing all integral parts with capybara.
+* Proper locales.
 
-- Ruby version
-
-- System dependencies
-
-- Configuration
-
-- Database creation
-
-- Database initialization
-
-- How to run the test suite
-
-- Services (job queues, cache servers, search engines, etc.)
-
-- Deployment instructions
-
-- ...
+## Deployed on Heroku
+https://venuespreview.herokuapp.com/
